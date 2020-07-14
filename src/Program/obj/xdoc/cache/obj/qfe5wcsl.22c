@@ -1,0 +1,10 @@
+id: Program
+language: CSharp
+name:
+  Default: Program
+qualifiedName:
+  Default: Program
+type: Assembly
+modifiers: {}
+items: []
+references: {}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8sQGrWofmjRmJNHhCP1J775LSNCc9mn3+QJEg3pB2jlkyPln+Y7o47O4csnNV91eWSB/BmFO3RKxK1LEF3B7IA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\FIT\\Desktop\\Tokaido\\src\\Library\\Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FIT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\FIT\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
