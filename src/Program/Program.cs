@@ -1,4 +1,6 @@
 ﻿using System;
+using Library;
+
 
 namespace Program
 {
@@ -6,7 +8,8 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            
         }
     }
 }
