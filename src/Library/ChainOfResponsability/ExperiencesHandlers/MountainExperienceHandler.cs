@@ -10,10 +10,6 @@ namespace Library
     */
     public class MountainExperience : BaseHandler
     {
-        /// <summary>
-        /// Se instancia una clase Points para poder acceder a sus datos.
-        /// </summary>
-        /// <returns></returns>
         Points points = new Points();
 
         /// <summary>

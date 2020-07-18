@@ -39,21 +39,8 @@ namespace Library
         /// <returns></returns>
         List<string> whereVisitorsWouldLikeToGo = new List<string>();
 
-
-      
        
 
-       
-/*
-        /// <summary>
-        /// Metodo que comienza el juego.
-        /// </summary>
-        public void Initialize()
-        {
-            var options = new List<string>() {"Hot Waters","Ocean","Mountain","Farm","Edo"};
-            DecideWhereToGo(nextExperience.travellers,options);
-        }
-*/
         /// <summary>
         /// Metodo al que se le pasa por parametro los visitantes y las opciones de lugares a donde pueden ir.
         /// </summary>
@@ -71,7 +58,6 @@ namespace Library
                 Console.WriteLine("Farm - Ocean - Ocean - Hot Waters - Mountain - Farm - Mountain - Edo");
                 string request = Console.ReadLine();
                 whereVisitorsWouldLikeToGo.Add(request);
-                //var destinationCount = whereVisitorsWouldLikeToGo.GroupBy(item => item).ToDictionary(x => x.Key, x => x.Count());
                 if (request == "Hot Waters")
                 {
                     hotWaters.Add(traveller);
@@ -148,20 +134,6 @@ namespace Library
             }
         }
 
-            
-        /// <summary>
-        /// Metodo que agrega observadores a una lista para que se les informe de los posibles cambios en la capacidad
-        /// maxima de un destino.
-        /// </summary>
-        public void AttachObservers()
-        {
-            Subject subject = new Subject();
-            foreach(Traveller traveller in travellers)
-            {
-                subject.Attach(traveller);
-            }
-        
-        }
 
         /// <summary>
         /// Este metodo del codigo cliente construye la cadena. Aunque el codigo cliente puede enviar

@@ -4,13 +4,8 @@ using System.Collections.Generic;
 namespace Library
 {
     /*
-            Esta clase tiene la unica responsabilidad de representar a los jugadores. Por esta razon cumple SRP o 
-            Principio de Unica Responsabilidad, dado que el principio dice que una clase debe tener una unica razon 
-            para cambiar y que cada responsabilidad es un eje de cambio. Si se recive mas de una responsabilidad hay 
-            mas razon de cambio y las responsabilidades se acoplarian.
-            En esta clase la unica razon de cambio es una nueva forma de definir a un jugador.
-    
-    
+        Esta clase mantiene el estado de interes para los observadores concretos
+        y los notifica cuando cambia su estado.
     */
     public class Traveller : IObserver
     {
@@ -27,10 +22,6 @@ namespace Library
         /// <value></value>
         public string Name {get;set;}
 
-        /// <summary>
-        /// Se crea un acceso a los puntos de la clase Money.
-        /// </summary>
-        /// <returns></returns>
         Money money = new Money();
 
         /// <summary>
@@ -39,10 +30,7 @@ namespace Library
         /// <value></value>
         public int totalMoney {get;set;}
 
-        /// <summary>
-        /// Se crea un acceso a los datos de la clase Points.
-        /// </summary>
-        /// <returns></returns>
+       
         Points points = new Points();
 
         /// <summary>
@@ -52,12 +40,12 @@ namespace Library
         /// <value></value>
         public int totalPoints {get;set;}
 
+        
         /// <summary>
         /// Lista con los nombres de los visitantes.
         /// </summary>
         /// <value></value>
         string[] names = {"Hirotada","Hiroshige","Yoshiyasu","Umeage","Sasayakko"};
-
 
         /// <summary>
         /// Metodo que crea a los visitantes.
@@ -73,8 +61,7 @@ namespace Library
                 travellers.Add(this);
             }
         }
-
-
+        
         /// <summary>
         /// Metodo que retorna una lista de visitantes.
         /// </summary>
@@ -84,6 +71,11 @@ namespace Library
             return travellers;
         }
 
+
+        /// <summary>
+        /// Metodo que notifica a los observadores de un cambio.
+        /// </summary>
+        /// <param name="notification"></param>
         public void Update(string notification)
         {
             Console.WriteLine(notification);

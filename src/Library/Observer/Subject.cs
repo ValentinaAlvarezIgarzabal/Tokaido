@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace Library
 {
     /*
-        
+        Implementa la interfaz de actualizacion, guardan la referencia del objeto que observan,
+        asi en caso de ser notificadoes de algun cambio pueden preguntar sobre este.
     */
     public class Subject : ISubject
     {
@@ -21,14 +22,35 @@ namespace Library
         /// <typeparam name="IObserver"></typeparam>
         /// <returns></returns>
         private List<Traveller> observers = new List<Traveller>();
+
+        /// <summary>
+        /// Metodo que adjunta visitantes a una lista de observadores.
+        /// </summary>
+        /// <param name="traveller"></param>
         public void Attach(Traveller traveller)
         {
             this.observers.Add(traveller);
         }
 
+        /// <summary>
+        /// Metodo que devuelve una lista de observadores.
+        /// </summary>
+        /// <returns></returns>
         public List<Traveller> GetObservers()
         {
             return observers;
+        }
+
+        /// <summary>
+        /// Metodo que agrega observadores a una lista para que se les informe de los posibles cambios en la capacidad
+        /// maxima de un destino.
+        /// </summary>
+        public void AttachObservers()
+        {
+            foreach(Traveller traveller in observers)
+            {
+                Attach(traveller);
+            }
         }
 
         /// <summary>
@@ -52,18 +74,31 @@ namespace Library
             }
         }
 
+        /// <summary>
+        /// Metodo que si cambia se notificara al observador.
+        /// </summary>
+        /// <param name="notification"></param>
+
         public void MountainVisitors(string notification)
         {
             this.mountain = notification;
             Notify();    
         }
 
+        /// <summary>
+        /// Metodo que si cambia se notificara al observador.
+        /// </summary>
+        /// <param name="notification"></param>
         public void OceanVisitors(string notification)
         {
             this.ocean = notification;
             Notify();
         }
 
+        /// <summary>
+        /// Metodo que si cambia se notificara al observador.
+        /// </summary>
+        /// <param name="notification"></param>
         public void HotWatersVisitors(string notification)
         {
             this.hotwater = notification;
@@ -71,6 +106,10 @@ namespace Library
 
         }
 
+        /// <summary>
+        /// Metodo que si cambia se informara al observador.
+        /// </summary>
+        /// <param name="notification"></param>
         public void FarmVisitors(string notification)
         {
             this.farm = notification;

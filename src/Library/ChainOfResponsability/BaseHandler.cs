@@ -25,6 +25,12 @@ namespace Library
             return handler;
         }
 
+        /// <summary>
+        /// Metodo para ejecutar un pedido.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="traveller"></param>
+        /// <returns></returns>
         public virtual object Handler(string request, Traveller traveller)
         {
             if (this.nextHandler != null)

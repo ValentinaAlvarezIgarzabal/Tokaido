@@ -13,8 +13,8 @@ namespace Library
 
             - La Base Handler (BaseHandler) : clase donde se pone el codigo comun a todas las clases de handle.
 
-            - Las Concrete Handlers (Farm/Ocean/Mountain/Hot Waters) : contienen el codigo para procesar los pedidos.
-                Luego de recibir un pedido debe decidir si lo procesa o lo pasa al siguiente eslavon de la cadena.
+            - Las Concrete Handlers (Farm/Ocean/Mountain/Hot Waters/Tokio/Edo) : contienen el codigo para procesar los pedidos.
+                Luego de recibir un pedido debe decidir si lo procesa o lo pasa al siguiente eslabon de la cadena.
 
             - El Client (NextExperience) : construye cadenas, un pedido se puede enviar a cualquiera de los handlers en 
                 la cadena, no tiene que se le primero.
@@ -27,8 +27,6 @@ namespace Library
             Ademas, una ventaja del patron es que reduce el acomplamiento. Ya que libera a un objeto de tener que saber
             que otro objeto maneja una peticion. En lugar de que los objetos mantengan referencias entre todos los posibles 
             receptores,solo tienen una unica referencia a sus sucesor.
-
-            srp
 
     */
     public interface IExperienceHandler

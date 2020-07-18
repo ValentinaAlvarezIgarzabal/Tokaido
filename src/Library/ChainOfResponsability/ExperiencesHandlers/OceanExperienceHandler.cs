@@ -12,10 +12,6 @@ namespace Library
 
     public class OceanExperience : BaseHandler
     {
-        /// <summary>
-        /// Se instancia un acceso a la clase Points para obtener sus datos.
-        /// </summary>
-        /// <returns></returns>
         Points points = new Points();
 
         /// <summary>
