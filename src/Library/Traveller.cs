@@ -10,8 +10,6 @@ namespace Library
             mas razon de cambio y las responsabilidades se acoplarian.
             En esta clase la unica razon de cambio es una nueva forma de definir a un jugador.
     
-            Esta clase matiene una referencia con la clase ------- e implementa el metodo Update de IObserver informando 
-            de cualquier cammbio de los estados de Subject.
     
     */
     public class Traveller : IObserver
@@ -21,7 +19,8 @@ namespace Library
         /// </summary>
         /// <typeparam name="Traveller"></typeparam>
         /// <returns></returns>
-        public List<Traveller> travellers = new List<Traveller>();
+        private List<Traveller> travellers = new List<Traveller>();
+
         /// <summary>
         /// Name es el nombre del jugador.
         /// </summary>
@@ -53,17 +52,41 @@ namespace Library
         /// <value></value>
         public int totalPoints {get;set;}
 
+        /// <summary>
+        /// Lista con los nombres de los visitantes.
+        /// </summary>
+        /// <value></value>
+        string[] names = {"Hirotada","Hiroshige","Yoshiyasu","Umeage","Sasayakko"};
+
 
         /// <summary>
-        /// Metodo donde se informa a un visitante que no puede ingresar a donde queria porque se llego al maximo de capacidad.
+        /// Metodo que crea a los visitantes.
         /// </summary>
-        /// <param name="subject"></param>
-        public void Update(ISubject subject)
+        /// <param name="names"></param>
+        public void CreateTraveller(List<string> names)
         {
-            if(subject is Subject subject1)
+            foreach(string name in names)
             {
-                Console.WriteLine("You cannot visit this place");
+                this.Name = name;
+                this.totalPoints = 0;
+                this.totalMoney = 0;
+                travellers.Add(this);
             }
+        }
+
+
+        /// <summary>
+        /// Metodo que retorna una lista de visitantes.
+        /// </summary>
+        /// <returns></returns>
+        public List<Traveller> getTravellers()
+        {
+            return travellers;
+        }
+
+        public void Update(string notification)
+        {
+            Console.WriteLine(notification);
         }
     }
 }

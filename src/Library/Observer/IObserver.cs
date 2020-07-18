@@ -6,6 +6,6 @@ namespace Library
     */
     public interface IObserver
     {
-        void Update(ISubject subject);
+        void Update(string notifiaction);
     }
 }

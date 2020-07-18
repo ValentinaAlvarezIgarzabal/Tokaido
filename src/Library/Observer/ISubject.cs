@@ -2,13 +2,12 @@ using System;
 namespace Library
 {
     /*
-        La interfaz ISubject conoce a los observers y les provee una interfaz para 
-        adjuntar o remover cualquier objeto IObserver. 
+        La interfaz ISubject provee metodos para adjuntar, remover o actualizar cualquier observador. 
     */
     public interface ISubject
     {
-        void Attach(IObserver observer);
-        void Detach(IObserver observer);
+        void Attach(Traveller traveller);
+        void Detach(Traveller traveller);
         void Notify();
     }
 }
